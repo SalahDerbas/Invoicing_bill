@@ -31,7 +31,7 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Set working directory
 WORKDIR /app
 RUN mv .env.example .env
-RUN composer update
+RUN composer install
 RUN php artisan key:generate
 
 #USER $user
